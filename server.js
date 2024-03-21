@@ -16,7 +16,6 @@ app.post('/api/colors', async (req, res) => {
         const word = req.body.word;
         const images = await fetchImages(word);
         const colors = await getDominantColors(images);
-        console.log(colors);
         return res.status(200).json(colors);
     } catch (error) {
         console.error('Error fetching colors:', error);
